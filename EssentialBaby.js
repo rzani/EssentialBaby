@@ -1,19 +1,18 @@
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
+  // CATEGORYS
+  Template.navbar.helpers({
+    categories: [
+      { text: "Roupas", slug: "roupas", icon: "mdi-action-face-unlock" },
+      { text: "Quarto", slug: "quarto", icon: "mdi-action-face-unlock" },
+      { text: "Passeio", slug: "passeio", icon: "mdi-action-face-unlock" },
+      { text: "Higiene", slug: "higiene", icon: "mdi-action-face-unlock" },
+      { text: "Acessórios", slug: "acessorios", icon: "mdi-action-face-unlock" },
+    ]
   });
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
+
+
 }
 
 if (Meteor.isServer) {

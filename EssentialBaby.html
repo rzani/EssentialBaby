@@ -1,14 +1,35 @@
 <head>
-  <title>EssentialBaby</title>
+  <title>Essential Baby</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  {{>navbar}}
 
-  {{> hello}}
+  <div class="content">
+
+  </div>
+
+  <script>
+  	$(".button-collapse").sideNav();
+  </script>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<!-- NAVBAR -->
+<template name="navbar">
+		<nav class="brown lighten-3">
+
+			<ul id="slide-out" class="side-nav fixed">
+				{{#each categories}}
+					<li class=".category"><a href="/{{slug}}"><i class="{{icon}} right"></i>{{text}}</a></li>
+				{{/each}}
+			</ul>
+
+			<a href="#" data-activates="slide-out" class="button-collapse orange-text text-lighten-5">&nbsp;&nbsp;<i class="mdi-navigation-menu"></i></a>
+
+			<div class="nav-wrapper">
+				<a href="/" class="white-text brand-logo center">Essential Baby</a>
+			</div>
+
+		</nav>
 </template>
